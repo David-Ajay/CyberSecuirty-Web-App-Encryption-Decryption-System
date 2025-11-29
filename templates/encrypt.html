@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Encrypt Your Files - CyberSecure</title>
+<link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet" />
+</head>
+<body class="matrix-bg">
+  <div class="centered-container wide">
+    <h2>Encrypt Your Files Using Modern Cryptography</h2>
+    <form method="POST" enctype="multipart/form-data" class="form-container">
+      <label for="text">Text to Encrypt (links or plain text):</label><br>
+      <textarea name="text" id="text" rows="4" placeholder="Enter text here..."></textarea>
+
+      <br><label>OR upload a file (txt, py, xlsx etc containing text):</label>
+      <input type="file" name="file" accept=".txt,.py,.xlsx,.csv,.json,.log" />
+
+      <br><label>Choose encryption algorithm:</label>
+      <select name="algorithm" required>
+        <option value="Fernet">Fernet (AES-based)</option>
+        <option value="RSA">RSA (Asymmetric)</option>
+        <option value="AES">AES (Symmetric)</option>
+      </select>
+
+      <br><label>Output encrypted data as:</label>
+      <select name="output_type" required>
+        <option value="text">Encrypted Text (less safe)</option>
+        <option value="image">Encrypted Image (more safe)</option>
+      </select>
+
+      <br><button type="submit" class="btn blue-btn wide-btn">Encrypt</button>
+    </form>
+  </div>
+</body>
+</html>

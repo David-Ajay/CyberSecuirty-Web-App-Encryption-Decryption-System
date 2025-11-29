@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Welcome - Simple Encryption-Decryption</title>
+<link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet" />
+</head>
+<body class="matrix-bg">
+  <div class="centered-container">
+    <h1>Welcome to CyberSecure</h1>
+    <p>
+      Encryption and Decryption are essential techniques to protect your data from
+      hackers and unauthorized access. Using modern cryptography algorithms such as
+      AES and Fernet, your files and texts stay safe.
+    </p>
+    <div class="button-container">
+      <a href="{{ url_for('encrypt_page') }}" class="btn blue-btn">Encrypt</a>
+      <a href="{{ url_for('decrypt_page') }}" class="btn red-btn">Decrypt</a>
+    </div>
+  </div>
+</body>
+</html>

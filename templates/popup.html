@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>{{ title }}</title>
+<link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet" />
+<script>
+function copyText() {
+  const textArea = document.getElementById('dataText');
+  textArea.select();
+  document.execCommand('copy');
+  alert('Copied to clipboard!');
+}
+</script>
+</head>
+<body class="matrix-bg">
+  <div class="centered-container">
+    <h2>{{ title }}</h2>
+    <textarea id="dataText" rows="10" readonly>{{ data }}</textarea>
+    {% if copybutton %}
+    <br><button class="btn blue-btn" onclick="copyText()" style="float:right;">Copy</button>
+    {% endif %}
+    <br>
+    <a href="{{ url_for('index') }}" class="btn blue-btn">Back to Home</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Decrypt Encrypted Data - CyberSecure</title>
+<link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet" />
+<script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</head>
+<body class="matrix-bg">
+  <div class="centered-container wide">
+    <h2>Decrypt Your Encrypted Data</h2>
+    <form method="POST" enctype="multipart/form-data" id="decryptForm">
+      <label>Choose input type:</label>
+      <select name="input_type" id="inputType" onchange="toggleInputBoxes()" required>
+        <option value="text">Decrypt Encrypted Text</option>
+        <option value="image">Decrypt Encrypted Image</option>
+      </select><br>
+      <label>Choose decryption algorithm:</label>
+      <select name="algorithm" required>
+        <option value="Fernet">Fernet (AES-based)</option>
+        <option value="RSA">RSA (Asymmetric)</option>
+        <option value="AES">AES (Symmetric)</option>
+      </select>
+
+      <div id="textInputBox" class="input-box">
+        <label>Paste Encrypted Text Here:</label>
+        <textarea name="encrypted_text" rows="6" placeholder="Paste encrypted text here..."></textarea>
+      </div>
+      <div id="imageInputBox" class="input-box" style="display:none;">
+        <label>Select Encrypted Image File:</label>
+        <input type="file" name="encrypted_image" accept="image/png,image/jpeg" />
+      </div>
+
+      <br><button type="submit" class="btn red-btn wide-btn">Decrypt</button>
+    </form>
+  </div>
+</body>
+</html>

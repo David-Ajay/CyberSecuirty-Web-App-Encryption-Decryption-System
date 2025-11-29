@@ -1,0 +1,4 @@
+Flask
+cryptography       # For Fernet, AES
+Pillow             # For image encoding
+pycryptodome       # For AES, RSA
